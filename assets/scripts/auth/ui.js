@@ -16,6 +16,7 @@ const onSignInSuccess = function (response) {
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').show()
+  $('#new-entry-click').show()
 }
 const onSignInFailure = function () {
   $('#message').text('Sign in failed!')
@@ -34,6 +35,7 @@ const onSignOutSuccess = function (response) {
   $('#change-password').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#entry-view').hide()
 }
 const onSignOutFailure = function () {
   $('#message').text('Sign out failed!')
