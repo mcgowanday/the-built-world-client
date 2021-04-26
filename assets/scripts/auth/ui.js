@@ -17,6 +17,8 @@ const onSignInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#new-entry-click').show()
+  $('#view-your-entries').show()
+  console.log(response.user)
 }
 const onSignInFailure = function () {
   $('#message').text('Sign in failed!')

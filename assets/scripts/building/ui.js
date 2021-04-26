@@ -21,9 +21,17 @@ const onNewEntrySuccess = function (response) {
 const onNewEntryFailure = function () {
   $('#message').text('Entry failed to post!')
 }
+const onViewYourEntriesSuccess = function (response) {
+  console.log(response)
+}
+const onViewYourEntriesFailure = function () {
+  $('#message').text('Index failed to load!')
+}
 
 module.exports = {
   onNewEntryClickSuccess,
   onNewEntrySuccess,
-  onNewEntryFailure
+  onNewEntryFailure,
+  onViewYourEntriesSuccess,
+  onViewYourEntriesFailure
 }

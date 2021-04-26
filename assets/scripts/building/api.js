@@ -14,6 +14,18 @@ const newEntry = function (data) {
   })
 }
 
+const viewYourEntries = function () {
+  // console.log(data)
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/buildings',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newEntry
+  newEntry,
+  viewYourEntries
 }
