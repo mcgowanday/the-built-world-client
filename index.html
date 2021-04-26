@@ -12,6 +12,28 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>The Built World</h1>
+      <hr>
+      <p id="message"></p>
+      <form id="sign-in">
+            <input name="credentials[email]" type="email" placeholder="Enter email" required>
+            <input name="credentials[password]" type="password" placeholder="Enter password" required>
+            <button>Sign In</button>
+          </form>
+      <form id="sign-up">
+            <input name="credentials[email]" type="email" placeholder="Enter email here" required>
+            <input name="credentials[password]" type="password" placeholder="Choose a password" required>
+            <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required>
+            <button>Sign Up</button>
+          </form>
+      <form id="change-password">
+            <input name="passwords[old]" type="password" placeholder="Current password" required>
+            <input name="passwords[new]" type="password" placeholder="New password" required>
+            <input name="passwords[new]" type="password" placeholder="Confirm new password" required>
+            <button>Change Password</button>
+          </form>
+      <form id="sign-out">
+            <button>Sign Out</button>
+          </form>
     </body>
 </html>
