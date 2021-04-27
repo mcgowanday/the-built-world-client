@@ -24,6 +24,14 @@ const onUpdateEntry = function (event) {
     .then(ui.onUpdateEntrySuccess)
     .catch(ui.onUpdateEntryFailure)
 }
+const onDeleteEntry = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const id = getFormFields(form)
+  api.deleteEntry(id)
+    .then(ui.onDeleteEntrySuccess)
+    .catch(ui.onDeleteEntryFailure)
+}
 const onViewEntries = function (event) {
   event.preventDefault()
   $('#entries-text').text('')
@@ -36,5 +44,6 @@ const onViewEntries = function (event) {
 module.exports = {
   onNewEntry,
   onViewEntries,
-  onUpdateEntry
+  onUpdateEntry,
+  onDeleteEntry
 }

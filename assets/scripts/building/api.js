@@ -26,13 +26,16 @@ const updateEntry = function (data) {
     data: data
   })
 }
-// const update = function (data) {
-//   return $.ajax({
-//     url: app.host + '/books/' + data.book.id,
-//     method: 'PATCH',
-//     data
-//   })
-// }
+const deleteEntry = function (data) {
+  console.log(data.building.ID)
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/buildings/' + data.building.ID,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 const viewEntries = function () {
   // console.log(data)
   return $.ajax({
@@ -47,5 +50,6 @@ const viewEntries = function () {
 module.exports = {
   newEntry,
   viewEntries,
-  updateEntry
+  updateEntry,
+  deleteEntry
 }

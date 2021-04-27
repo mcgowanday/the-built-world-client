@@ -32,12 +32,28 @@ const onUpdateEntryClickSuccess = function () {
 const onUpdateEntrySuccess = function () {
   $('#update-entry').trigger('reset')
   $('#message').text('Entry Updated!')
-  $('#new-entry').trigger('reset')
+  // $('#new-entry').trigger('reset')
   $('#update-entry').hide()
   $('#update-entry-click').show()
 }
 const onUpdateEntryFailure = function () {
   $('#message').text('Update failed to post!')
+}
+const onDeleteEntryClickSuccess = function () {
+  event.preventDefault()
+  $('#message').text('Delete your specified Building Rating!')
+  // $('#new-entry-click').trigger('reset')
+  $('#delete-entry').show()
+  $('#delete-entry-click').hide()
+}
+const onDeleteEntrySuccess = function () {
+  $('#delete-entry').trigger('reset')
+  $('#message').text('Entry Deleted!')
+  $('#delete-entry').hide()
+  $('#delete-entry-click').show()
+}
+const onDeleteEntryFailure = function () {
+  $('#message').text('Entry Failed to Delete!')
 }
 const onViewEntriesSuccess = function (response) {
   const buildings = response.buildings
@@ -71,5 +87,8 @@ module.exports = {
   onViewEntriesFailure,
   onUpdateEntryClickSuccess,
   onUpdateEntrySuccess,
-  onUpdateEntryFailure
+  onUpdateEntryFailure,
+  onDeleteEntryClickSuccess,
+  onDeleteEntrySuccess,
+  onDeleteEntryFailure
 }

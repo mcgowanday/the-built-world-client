@@ -12,7 +12,7 @@ const onSignInSuccess = function (response) {
   store.user = response.user
   $('#message').text(response.user.email + ' signed in successfully')
   $('#sign-in').trigger('reset')
-  $('#change-password').show()
+  $('#change-password-click').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
   $('#sign-out').show()
@@ -20,11 +20,20 @@ const onSignInSuccess = function (response) {
   $('#view-entries').show()
   $('#entry-view').show()
   $('#update-entry-click').show()
+  $('#delete-entry-click').show()
   console.log(response.user)
 }
 const onSignInFailure = function () {
   $('#message').text('Sign in failed!')
 }
+const onChangePasswordClickSuccess = function () {
+  event.preventDefault()
+  $('#message').text('Create a new Password!')
+  // $('#new-entry-click').trigger('reset')
+  $('#change-password').show()
+  $('#change-password-click').hide()
+}
+
 const onChangePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#change-password').trigger('reset')
@@ -42,6 +51,7 @@ const onSignOutSuccess = function (response) {
   $('#new-entry').hide()
   $('#update-entry').hide()
   $('#entry-view').hide()
+  $('#delete-entry-click').hide()
   $('#entries-text').text('')
 }
 const onSignOutFailure = function () {
@@ -56,5 +66,6 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onChangePasswordClickSuccess
 }
