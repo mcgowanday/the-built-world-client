@@ -14,7 +14,7 @@ const newEntry = function (data) {
   })
 }
 
-const viewYourEntries = function () {
+const viewEntries = function () {
   // console.log(data)
   return $.ajax({
     method: 'GET',
@@ -27,5 +27,5 @@ const viewYourEntries = function () {
 
 module.exports = {
   newEntry,
-  viewYourEntries
+  viewEntries
 }

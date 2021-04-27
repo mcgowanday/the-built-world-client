@@ -14,7 +14,7 @@ $(() => {
   // $('#sign-out').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#view-your-entries').hide()
+  $('#view-entries').hide()
   $('#new-entry-click').hide()
   $('#new-entry').hide()
   //
@@ -25,5 +25,5 @@ $(() => {
   //
   $('#new-entry-click').on('click', ui.onNewEntryClickSuccess)
   $('#new-entry').on('submit', buildingEvents.onNewEntry)
-  $('#view-your-entries').on('click', buildingEvents.onViewYourEntries)
+  $('#view-entries').on('click', buildingEvents.onViewEntries)
 })

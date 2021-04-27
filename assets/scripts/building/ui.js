@@ -21,10 +21,24 @@ const onNewEntrySuccess = function (response) {
 const onNewEntryFailure = function () {
   $('#message').text('Entry failed to post!')
 }
-const onViewYourEntriesSuccess = function (response) {
-  console.log(response)
+const onViewEntriesSuccess = function (response) {
+  const buildings = response.buildings
+  console.log(response.buildings)
+  for (let i = 0; i < buildings.length; i++) {
+    const name = response.buildings[i].name
+    const city = response.buildings[i].city
+    const rating = response.buildings[i].rating
+    // console.log(name)
+    $('#entries-text').append(name + ', ' + city + ':  ' + rating + '</br>')
+  }
+  // console.log(response)
+  // console.log(response.buildings[0].name)
+  // console.log(response.buildings[0].city)
+  // buildings.forEach((item, i) => {
 }
-const onViewYourEntriesFailure = function () {
+
+  // $('#entries-text').text(response.buildings)
+const onViewEntriesFailure = function () {
   $('#message').text('Index failed to load!')
 }
 
@@ -32,6 +46,6 @@ module.exports = {
   onNewEntryClickSuccess,
   onNewEntrySuccess,
   onNewEntryFailure,
-  onViewYourEntriesSuccess,
-  onViewYourEntriesFailure
+  onViewEntriesSuccess,
+  onViewEntriesFailure
 }

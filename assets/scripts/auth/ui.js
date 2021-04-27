@@ -17,7 +17,8 @@ const onSignInSuccess = function (response) {
   $('#sign-in').hide()
   $('#sign-out').show()
   $('#new-entry-click').show()
-  $('#view-your-entries').show()
+  $('#view-entries').show()
+  $('#entry-view').show()
   console.log(response.user)
 }
 const onSignInFailure = function () {
@@ -38,6 +39,7 @@ const onSignOutSuccess = function (response) {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#entry-view').hide()
+  $('#entries-text').text('')
 }
 const onSignOutFailure = function () {
   $('#message').text('Sign out failed!')

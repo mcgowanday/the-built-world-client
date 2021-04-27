@@ -16,15 +16,15 @@ const onNewEntry = function (event) {
     .then(ui.onNewEntrySuccess)
     .catch(ui.onNewEntryFailure)
 }
-const onViewYourEntries = function (event) {
+const onViewEntries = function (event) {
   event.preventDefault()
-  api.viewYourEntries()
+  api.viewEntries()
   // handle success or failure
-    .then(ui.onViewYourEntriesSuccess)
-    .catch(ui.onViewYourEntriesFailure)
+    .then(ui.onViewEntriesSuccess)
+    .catch(ui.onViewEntriesFailure)
 }
 
 module.exports = {
   onNewEntry,
-  onViewYourEntries
+  onViewEntries
 }
