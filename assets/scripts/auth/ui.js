@@ -4,6 +4,15 @@ const store = require('./../store')
 const onSignUpSuccess = function () {
   $('#message').text('Signed up successfully')
   $('#sign-up').trigger('reset')
+  $('#change-password-click').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
+  $('#sign-out').show()
+  $('#new-entry-click').show()
+  $('#view-entries').show()
+  $('#entry-view').show()
+  $('#update-entry-click').show()
+  $('#delete-entry-click').show()
 }
 const onSignUpFailure = function () {
   $('#message').text('Sign up failed')
