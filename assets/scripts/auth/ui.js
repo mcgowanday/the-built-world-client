@@ -7,6 +7,7 @@ const onSignUpSuccess = function () {
 }
 const onSignUpFailure = function () {
   $('#message').text('Sign up failed')
+  $('#sign-up').trigger('reset')
 }
 const onSignInSuccess = function (response) {
   store.user = response.user
@@ -25,6 +26,7 @@ const onSignInSuccess = function (response) {
 }
 const onSignInFailure = function () {
   $('#message').text('Sign in failed!')
+  $('#sign-in').trigger('reset')
 }
 const onChangePasswordClickSuccess = function () {
   event.preventDefault()
