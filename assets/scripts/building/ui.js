@@ -21,6 +21,14 @@ const onNewEntrySuccess = function (response) {
 const onNewEntryFailure = function () {
   $('#message').text('Entry failed to post!')
 }
+
+const onUpdateEntryClickSuccess = function () {
+  event.preventDefault()
+  $('#message').text('Update your Building Rating!')
+  // $('#new-entry-click').trigger('reset')
+  $('#update-entry').show()
+  $('#update-entry-click').hide()
+}
 const onViewEntriesSuccess = function (response) {
   const buildings = response.buildings
   console.log(response.buildings)
@@ -28,8 +36,9 @@ const onViewEntriesSuccess = function (response) {
     const name = response.buildings[i].name
     const city = response.buildings[i].city
     const rating = response.buildings[i].rating
+    const id = response.buildings[i]._id
     // console.log(name)
-    $('#entries-text').append(name + ', ' + city + ':  ' + rating + '</br>')
+    $('#entries-text').append(name + ', ' + city + '.  Rating:  ' + rating + '</br>' + 'Building ID: ' + id + '</br>' + '</br>')
   }
   // console.log(response)
   // console.log(response.buildings[0].name)
@@ -47,5 +56,6 @@ module.exports = {
   onNewEntrySuccess,
   onNewEntryFailure,
   onViewEntriesSuccess,
-  onViewEntriesFailure
+  onViewEntriesFailure,
+  onUpdateEntryClickSuccess
 }

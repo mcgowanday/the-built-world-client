@@ -16,6 +16,14 @@ const onNewEntry = function (event) {
     .then(ui.onNewEntrySuccess)
     .catch(ui.onNewEntryFailure)
 }
+const onUpdateEntry = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const data = getFormFields(form)
+  api.updateEntry(data)
+    .then(ui.onUpdateEntrySuccess)
+    .catch(ui.onUpdateEntryFailure)
+}
 const onViewEntries = function (event) {
   event.preventDefault()
   api.viewEntries()
@@ -26,5 +34,6 @@ const onViewEntries = function (event) {
 
 module.exports = {
   onNewEntry,
-  onViewEntries
+  onViewEntries,
+  onUpdateEntry
 }

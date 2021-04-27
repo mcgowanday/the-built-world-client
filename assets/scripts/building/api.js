@@ -14,6 +14,25 @@ const newEntry = function (data) {
   })
 }
 
+const updateEntry = function (data) {
+  console.log(data)
+  console.log(data.building.ID)
+  return $.ajax({
+    url: config.apiUrl + '/buildings/' + data.building.ID,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: data
+  })
+}
+// const update = function (data) {
+//   return $.ajax({
+//     url: app.host + '/books/' + data.book.id,
+//     method: 'PATCH',
+//     data
+//   })
+// }
 const viewEntries = function () {
   // console.log(data)
   return $.ajax({
@@ -27,5 +46,6 @@ const viewEntries = function () {
 
 module.exports = {
   newEntry,
-  viewEntries
+  viewEntries,
+  updateEntry
 }

@@ -17,6 +17,8 @@ $(() => {
   $('#view-entries').hide()
   $('#new-entry-click').hide()
   $('#new-entry').hide()
+  $('#update-entry-click').hide()
+  $('#update-entry').hide()
   //
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
@@ -25,5 +27,7 @@ $(() => {
   //
   $('#new-entry-click').on('click', ui.onNewEntryClickSuccess)
   $('#new-entry').on('submit', buildingEvents.onNewEntry)
+  $('#update-entry-click').on('click', ui.onUpdateEntryClickSuccess)
+  $('#update-entry').on('submit', buildingEvents.onUpdateEntry)
   $('#view-entries').on('click', buildingEvents.onViewEntries)
 })
