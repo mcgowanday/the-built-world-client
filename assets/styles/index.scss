@@ -1,1 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+
+$alt-color: $cyan;
+$body-bg-color: $gray-200;
+$font-color: $black;
+
+body {
+  background-color: $body-bg-color;
+}
+
+// h1 {
+// font-family: ;
+// }
+h1 { font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif; font-size: 32px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 35.2px; }

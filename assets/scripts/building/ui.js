@@ -64,7 +64,7 @@ const onViewEntriesSuccess = function (response) {
     const rating = response.buildings[i].rating
     const id = response.buildings[i]._id
     // console.log(name)
-    $('#entries-text').append(name + ', ' + city + ' –  Rating:  ' + rating + '</br>' + 'Building ID: ' + id + '</br>' + '</br>')
+    $('#entries-text').append('<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' + '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>' + '</br>')
     $('#view-entries').trigger('reset')
     $('#entries-text').text()
   }
