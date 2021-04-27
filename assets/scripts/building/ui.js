@@ -7,6 +7,7 @@ const onNewEntryClickSuccess = function () {
   $('#new-entry').show()
   $('#new-entry-click').hide()
 }
+
 const onNewEntrySuccess = function (response) {
   console.log(response)
   // resetting Game outcome message text to empty string
@@ -16,8 +17,8 @@ const onNewEntrySuccess = function (response) {
   $('#new-entry').trigger('reset')
   $('#new-entry').hide()
   $('#new-entry-click').show()
-  // console.log(store.game)
 }
+
 const onNewEntryFailure = function () {
   $('#message').text('Entry failed to post!')
 }
@@ -29,6 +30,7 @@ const onUpdateEntryClickSuccess = function () {
   $('#update-entry').show()
   $('#update-entry-click').hide()
 }
+
 const onUpdateEntrySuccess = function () {
   $('#update-entry').trigger('reset')
   $('#message').text('Entry Updated!')
@@ -36,9 +38,11 @@ const onUpdateEntrySuccess = function () {
   $('#update-entry').hide()
   $('#update-entry-click').show()
 }
+
 const onUpdateEntryFailure = function () {
   $('#message').text('Update failed to post!')
 }
+
 const onDeleteEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Delete your specified Building Rating!')
@@ -46,15 +50,18 @@ const onDeleteEntryClickSuccess = function () {
   $('#delete-entry').show()
   $('#delete-entry-click').hide()
 }
+
 const onDeleteEntrySuccess = function () {
   $('#delete-entry').trigger('reset')
   $('#message').text('Entry Deleted!')
   $('#delete-entry').hide()
   $('#delete-entry-click').show()
 }
+
 const onDeleteEntryFailure = function () {
   $('#message').text('Entry Failed to Delete!')
 }
+
 const onViewEntriesSuccess = function (response) {
   const buildings = response.buildings
   console.log(response.buildings)
@@ -64,7 +71,8 @@ const onViewEntriesSuccess = function (response) {
     const rating = response.buildings[i].rating
     const id = response.buildings[i]._id
     // console.log(name)
-    $('#entries-text').append('<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' + '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>' + '</br>')
+    $('#entries-text').append('<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
+     '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>' + '</br>')
     $('#view-entries').trigger('reset')
     $('#entries-text').text()
   }

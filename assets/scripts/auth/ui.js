@@ -62,6 +62,7 @@ const onSignOutSuccess = function (response) {
   $('#new-entry').hide()
   $('#update-entry').hide()
   $('#entry-view').hide()
+  $('#delete-entry').hide()
   $('#delete-entry-click').hide()
   $('#entries-text').text('')
 }
