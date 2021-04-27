@@ -26,6 +26,7 @@ const onUpdateEntry = function (event) {
 }
 const onViewEntries = function (event) {
   event.preventDefault()
+  $('#entries-text').text('')
   api.viewEntries()
   // handle success or failure
     .then(ui.onViewEntriesSuccess)
