@@ -74,7 +74,9 @@ const onViewEntriesSuccess = function (response) {
     $('#entries-text').append('<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
      '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>' + '</br>')
     $('#view-entries').trigger('reset')
-    $('#entries-text').text()
+    $('#message').text('Viewing All Entries!')
+    $('#view-entries').hide()
+    $('#hide-entries').show()
   }
   // console.log(response)
   // console.log(response.buildings[0].name)
@@ -85,6 +87,19 @@ const onViewEntriesSuccess = function (response) {
 // $('#entries-text').text(response.buildings)
 const onViewEntriesFailure = function () {
   $('#message').text('Index failed to load!')
+}
+
+const onHideEntriesSuccess = function () {
+  event.preventDefault()
+  $('#hide-entries').trigger('reset')
+  $('#message').text('Entries Hidden!')
+  $('#entries-text').text('')
+  $('#hide-entries').hide()
+  $('#view-entries').show()
+}
+
+const onHideEntriesFailure = function () {
+  $('#message').text('Entries failed to hide!')
 }
 
 module.exports = {
@@ -98,5 +113,7 @@ module.exports = {
   onUpdateEntryFailure,
   onDeleteEntryClickSuccess,
   onDeleteEntrySuccess,
-  onDeleteEntryFailure
+  onDeleteEntryFailure,
+  onHideEntriesSuccess,
+  onHideEntriesFailure
 }

@@ -17,13 +17,14 @@ $(() => {
   $('#change-password-click').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
-  $('#view-entries').hide()
   $('#new-entry-click').hide()
   $('#new-entry').hide()
   $('#update-entry-click').hide()
   $('#update-entry').hide()
   $('#delete-entry-click').hide()
   $('#delete-entry').hide()
+  $('#view-entries').hide()
+  $('#hide-entries').hide()
 
   //
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -39,4 +40,5 @@ $(() => {
   $('#delete-entry-click').on('click', ui.onDeleteEntryClickSuccess)
   $('#delete-entry').on('submit', buildingEvents.onDeleteEntry)
   $('#view-entries').on('click', buildingEvents.onViewEntries)
+  $('#hide-entries').on('click', ui.onHideEntriesSuccess)
 })
