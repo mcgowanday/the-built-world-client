@@ -3,7 +3,7 @@
 const onNewEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Create a new Building Rating!')
-  // $('#new-entry-click').trigger('reset')
+  $('#new-entry-click').trigger('reset')
   $('#new-entry').show()
   $('#new-entry-click').hide()
 }
@@ -21,6 +21,8 @@ const onNewEntrySuccess = function (response) {
 
 const onNewEntryFailure = function () {
   $('#message').text('Entry failed to post!')
+  $('#new-entry').hide()
+  $('#new-entry-click').show()
 }
 
 const onUpdateEntryClickSuccess = function () {
@@ -41,6 +43,8 @@ const onUpdateEntrySuccess = function () {
 
 const onUpdateEntryFailure = function () {
   $('#message').text('Update failed to post!')
+  $('#update-entry').hide()
+  $('#update-entry-click').show()
 }
 
 const onDeleteEntryClickSuccess = function () {
@@ -60,6 +64,8 @@ const onDeleteEntrySuccess = function () {
 
 const onDeleteEntryFailure = function () {
   $('#message').text('Entry Failed to Delete!')
+  $('#delete-entry').hide()
+  $('#delete-entry-click').show()
 }
 
 const onViewEntriesSuccess = function (response) {
