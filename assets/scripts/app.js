@@ -25,6 +25,7 @@ $(() => {
   $('#delete-entry').hide()
   $('#view-entries').hide()
   $('#hide-entries').hide()
+  $('#refresh-entries').hide()
 
   //
   $('#sign-up').on('submit', authEvents.onSignUp)
@@ -41,4 +42,5 @@ $(() => {
   $('#delete-entry').on('submit', buildingEvents.onDeleteEntry)
   $('#view-entries').on('click', buildingEvents.onViewEntries)
   $('#hide-entries').on('click', ui.onHideEntriesSuccess)
+  $('#refresh-entries').on('click', buildingEvents.onRefreshEntries)
 })

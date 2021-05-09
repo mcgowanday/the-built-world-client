@@ -1,5 +1,8 @@
 'use strict'
 
+const api = require('./api')
+const buildingEvents = require('./events')
+
 const onNewEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Create a new Building Rating!')
@@ -20,7 +23,7 @@ const onNewEntrySuccess = function (response) {
 }
 
 const onNewEntryFailure = function () {
-  $('#message').text('Entry failed to post!')
+  $('#message').text('Entry Failed to Post!')
   $('#new-entry').hide()
   $('#new-entry-click').show()
 }
@@ -77,12 +80,13 @@ const onViewEntriesSuccess = function (response) {
     const rating = response.buildings[i].rating
     const id = response.buildings[i]._id
     // console.log(name)
-    $('#entries-text').append('<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
-     '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>' + '</br>')
+    $('#entries-text').append('</br>' + '<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
+     '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>')
     $('#view-entries').trigger('reset')
     $('#message').text('Viewing All Entries!')
     $('#view-entries').hide()
     $('#hide-entries').show()
+    $('#refresh-entries').show()
   }
   // console.log(response)
   // console.log(response.buildings[0].name)
@@ -92,7 +96,7 @@ const onViewEntriesSuccess = function (response) {
 
 // $('#entries-text').text(response.buildings)
 const onViewEntriesFailure = function () {
-  $('#message').text('Index failed to load!')
+  $('#message').text('Index Failed to Load!')
 }
 
 const onHideEntriesSuccess = function () {
@@ -101,25 +105,38 @@ const onHideEntriesSuccess = function () {
   $('#message').text('Entries Hidden!')
   $('#entries-text').text('')
   $('#hide-entries').hide()
+  $('#refresh-entries').hide()
   $('#view-entries').show()
 }
 
 const onHideEntriesFailure = function () {
-  $('#message').text('Entries failed to hide!')
+  $('#message').text('Entries Failed to Hide!')
+}
+
+const onRefreshEntriesSuccess = function (response) {
+  $('#entries-text').text('')
+  onViewEntriesSuccess(response)
+  $('#message').text('Entries Refreshed!')
+}
+
+const onRefreshEntriesFailure = function () {
+  $('#message').text('Entries Failed to Refresh!')
 }
 
 module.exports = {
   onNewEntryClickSuccess,
   onNewEntrySuccess,
   onNewEntryFailure,
-  onViewEntriesSuccess,
-  onViewEntriesFailure,
   onUpdateEntryClickSuccess,
   onUpdateEntrySuccess,
   onUpdateEntryFailure,
   onDeleteEntryClickSuccess,
   onDeleteEntrySuccess,
   onDeleteEntryFailure,
+  onViewEntriesSuccess,
+  onViewEntriesFailure,
   onHideEntriesSuccess,
-  onHideEntriesFailure
+  onHideEntriesFailure,
+  onRefreshEntriesSuccess,
+  onRefreshEntriesFailure
 }

@@ -12,73 +12,78 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>The Built World!</h1>
-      <p id="message"></p>
-      <form id="sign-in">
-            <input name="credentials[email]" type="email" placeholder="Enter email" required>
-            <input name="credentials[password]" type="password" placeholder="Enter password" required>
-            <button>Sign In</button>
-          </form>
-      <form id="sign-up">
-            <input name="credentials[email]" type="email" placeholder="Enter email here" required>
-            <input name="credentials[password]" type="password" placeholder="Choose a password" required>
-            <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required>
-            <button>Sign Up</button>
-          </form>
-      <form id="change-password-click">
-            <button>Change Password</button>
-          </form>
-      <form id="change-password">
-            <input name="passwords[old]" type="password" placeholder="Current password" required>
-            <input name="passwords[new]" type="password" placeholder="New password" required>
-            <input name="passwords[new]" type="password" placeholder="Confirm new password" required>
-            <button type="button" class="btn-close" aria-label="Close">Change Password</button>
-          </form>
-      <form id="sign-out">
-            <!-- <button>Sign Out</button> -->
-            <Button variant="secondary">Sign Out</Button>
-            <button type="button" class="btn btn-outline-primary btn-sm btn-close" aria-label="Close">Primary</button>
-            <button type="button" class="btn btn-outline-secondary btn-sm">Secondary</button>
-            <button type="button" class="btn btn-primary btn-lg raised">Raised</button>
-          </form>
+      <header>
+        <h1>The Built World!</h1>
+        <p id="message"></p>
+        <form id="sign-in">
+              <input name="credentials[email]" type="email" placeholder="Enter email" required>
+              <input name="credentials[password]" type="password" placeholder="Enter password" required>
+              <button>Sign In</button>
+            </form>
+        <form id="sign-up">
+              <input name="credentials[email]" type="email" placeholder="Enter email here" required>
+              <input name="credentials[password]" type="password" placeholder="Choose a password" required>
+              <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required>
+              <button>Sign Up</button>
+            </form>
+        <form id="change-password-click">
+              <button>Change Password</button>
+            </form>
+        <form id="change-password">
+              <input name="passwords[old]" type="password" placeholder="Current password" required>
+              <input name="passwords[new]" type="password" placeholder="New password" required>
+              <input name="passwords[new]" type="password" placeholder="Confirm new password" required>
+              <button type="button" class="btn-close" aria-label="Close">Change Password</button>
+            </form>
+        <form id="sign-out">
+              <!-- <button>Sign Out</button> -->
+              <Button variant="secondary">Sign Out</Button>
+              <button type="button" class="btn btn-outline-primary btn-sm btn-close" aria-label="Close">Primary</button>
+              <button type="button" class="btn btn-outline-secondary btn-sm">Secondary</button>
+              <button type="button" class="btn btn-primary btn-lg raised">Raised</button>
+            </form>
+      </header>
       <hr>
       <section id="entry-view">
-      <form id="new-entry-click">
-            <button>New Entry</button>
-          </form>
-      <form id="new-entry">
-            <input name="building[name]" type="text" placeholder="Building name">
-            <input name="building[city]" type="text" placeholder="City">
-            <input name="building[rating]" type="text" placeholder="User rating (0-100)">
-            <button>Submit New Entry</button>
-          </form>
-      <form id="update-entry-click">
-            <button>Update Existing Entry</button>
-          </form>
-      <form id="update-entry">
-            <input name="building[name]" type="text" placeholder="Building name">
-            <input name="building[city]" type="text" placeholder="City">
-            <input name="building[rating]" type="text" placeholder="User rating (0-100)">
-            <input name="building[ID]" type="text" placeholder="Building ID">
-            <button>Update Entry (must be owned by you)</button>
-          </form>
-      <form id="delete-entry-click">
-            <button>Delete Existing Entry</button>
-          </form>
-      <form id="delete-entry">
-        <input name="building[ID]" type="text" placeholder="Building ID">
-        <button>Delete Entry (must be owned by you)</button>
-      </form>
+        <form id="new-entry-click">
+              <button>New Entry</button>
+            </form>
+        <form id="new-entry">
+              <input name="building[name]" type="text" placeholder="Building name">
+              <input name="building[city]" type="text" placeholder="City">
+              <input name="building[rating]" type="text" placeholder="User rating (0-100)">
+              <button>Submit New Entry</button>
+            </form>
+        <form id="update-entry-click">
+              <button>Update Existing Entry</button>
+            </form>
+        <form id="update-entry">
+              <input name="building[name]" type="text" placeholder="Building name">
+              <input name="building[city]" type="text" placeholder="City">
+              <input name="building[rating]" type="text" placeholder="User rating (0-100)">
+              <input name="building[ID]" type="text" placeholder="Building ID">
+              <button>Update Entry (must be owned by you)</button>
+            </form>
+        <form id="delete-entry-click">
+              <button>Delete Existing Entry</button>
+            </form>
+        <form id="delete-entry">
+          <input name="building[ID]" type="text" placeholder="Building ID">
+          <button>Delete Entry (must be owned by you)</button>
+        </form>
 
 
-      <form id="view-entries">
-            <button>View Entries</button>
-          </form>
-      <form id="hide-entries">
-            <button>Hide Entries</button>
-          </form>
-        </br>
-          <p id="entries-text"></p>
-        </section>
+        <form id="view-entries">
+              <button>View Entries</button>
+            </form>
+        <form id="hide-entries">
+              <button>Hide Entries</button>
+            </form>
+        <form id="refresh-entries">
+              <button>Refresh Entries</button>
+            </form>
+          </br>
+            <p id="entries-text"></p>
+      </section>
     </body>
 </html>

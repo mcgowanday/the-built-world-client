@@ -34,16 +34,25 @@ const onDeleteEntry = function (event) {
 }
 const onViewEntries = function (event) {
   event.preventDefault()
-  $('#entries-text').text('')
+  // $('#entries-text').text('')
   api.viewEntries()
   // handle success or failure
     .then(ui.onViewEntriesSuccess)
     .catch(ui.onViewEntriesFailure)
 }
+const onRefreshEntries = function () {
+  event.preventDefault()
+  // $('#entries-text').text('')
+  api.viewEntries()
+  // handle success or failure
+    .then(ui.onRefreshEntriesSuccess)
+    .catch(ui.onRefreshEntriesFailure)
+}
 
 module.exports = {
   onNewEntry,
-  onViewEntries,
   onUpdateEntry,
-  onDeleteEntry
+  onDeleteEntry,
+  onViewEntries,
+  onRefreshEntries
 }
