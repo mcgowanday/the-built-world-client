@@ -13,6 +13,7 @@ const authUi = require('./auth/ui')
 $(() => {
   // your JS code goes here
   // $('#sign-out').hide()
+  // # initial page view
   $('#change-password-click').hide()
   $('#change-password').hide()
   $('#sign-out').hide()

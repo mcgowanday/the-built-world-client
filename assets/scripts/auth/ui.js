@@ -1,8 +1,9 @@
 'use strict'
 const store = require('./../store')
 
-const onSignUpSuccess = function () {
-  $('#message').text('Signed up successfully')
+const onSignUpSuccess = function (response) {
+  store.user = response.user
+  $('#message').text(response.user.email + ' signed in successfully')
   $('#sign-up').trigger('reset')
   $('#change-password-click').show()
   $('#sign-up').hide()
@@ -56,7 +57,7 @@ const onSignOutSuccess = function (response) {
   store.user = null
   $('#message').text('User signed out!')
   $('#sign-out').hide()
-  $('#change-password').hide()
+  $('#change-password-click').hide()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#new-entry').hide()
