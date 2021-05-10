@@ -1,7 +1,7 @@
 'use strict'
-const getFormFields = require('./../../../lib/get-form-fields')
+
 // /Users/mcgowanday/SEI/projects/buildings-client/lib/get-form-fields.js
-// /Users/mcgowanday/SEI/projects/buildings-client/assets/scripts/auth/events.js
+const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
@@ -17,6 +17,7 @@ const onSignUp = function (event) {
     // handle failure
     .catch(ui.onSignUpFailure)
 }
+
 const onSignIn = function (event) {
   event.preventDefault()
   // get the data from the sign-in form
@@ -28,6 +29,7 @@ const onSignIn = function (event) {
     .then(ui.onSignInSuccess)
     .catch(ui.onSignInFailure)
 }
+
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
@@ -36,6 +38,7 @@ const onChangePassword = function (event) {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 }
+
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()

@@ -11,8 +11,6 @@ const authUi = require('./auth/ui')
 // require('./example')
 
 $(() => {
-  // your JS code goes here
-  // $('#sign-out').hide()
   // # initial page view
   $('#change-password-click').hide()
   $('#change-password').hide()
@@ -27,13 +25,14 @@ $(() => {
   $('#hide-entries').hide()
   $('#refresh-entries').hide()
 
-  //
+  // # Auth
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password-click').on('submit', authUi.onChangePasswordClickSuccess)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
-  //
+
+  // # Entries
   $('#new-entry-click').on('click', ui.onNewEntryClickSuccess)
   $('#new-entry').on('submit', buildingEvents.onNewEntry)
   $('#update-entry-click').on('click', ui.onUpdateEntryClickSuccess)

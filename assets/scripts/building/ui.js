@@ -1,8 +1,5 @@
 'use strict'
 
-const api = require('./api')
-const buildingEvents = require('./events')
-
 const onNewEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Create a new Building Rating!')
@@ -12,10 +9,7 @@ const onNewEntryClickSuccess = function () {
 }
 
 const onNewEntrySuccess = function (response) {
-  console.log(response)
-  // resetting Game outcome message text to empty string
-  // $('#message2').text('')
-  // store.game = response.game
+  // console.log(response)
   $('#message').text('Entry posted!')
   $('#new-entry').trigger('reset')
   $('#new-entry').hide()
@@ -31,7 +25,6 @@ const onNewEntryFailure = function () {
 const onUpdateEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Update your Building Rating!')
-  // $('#new-entry-click').trigger('reset')
   $('#update-entry').show()
   $('#update-entry-click').hide()
 }
@@ -39,7 +32,6 @@ const onUpdateEntryClickSuccess = function () {
 const onUpdateEntrySuccess = function () {
   $('#update-entry').trigger('reset')
   $('#message').text('Entry Updated!')
-  // $('#new-entry').trigger('reset')
   $('#update-entry').hide()
   $('#update-entry-click').show()
 }
@@ -53,7 +45,6 @@ const onUpdateEntryFailure = function () {
 const onDeleteEntryClickSuccess = function () {
   event.preventDefault()
   $('#message').text('Delete your specified Building Rating!')
-  // $('#new-entry-click').trigger('reset')
   $('#delete-entry').show()
   $('#delete-entry-click').hide()
 }
@@ -73,7 +64,7 @@ const onDeleteEntryFailure = function () {
 
 const onViewEntriesSuccess = function (response) {
   const buildings = response.buildings
-  console.log(response.buildings)
+  // console.log(response.buildings)
   for (let i = 0; i < buildings.length; i++) {
     const name = response.buildings[i].name
     const city = response.buildings[i].city
@@ -82,19 +73,17 @@ const onViewEntriesSuccess = function (response) {
     // console.log(name)
     $('#entries-text').append('</br>' + '<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
      '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>')
-    $('#view-entries').trigger('reset')
-    $('#message').text('Viewing All Entries!')
-    $('#view-entries').hide()
-    $('#hide-entries').show()
-    $('#refresh-entries').show()
   }
+  $('#view-entries').trigger('reset')
+  $('#message').text('Viewing All Entries!')
+  $('#view-entries').hide()
+  $('#hide-entries').show()
+  $('#refresh-entries').show()
   // console.log(response)
   // console.log(response.buildings[0].name)
   // console.log(response.buildings[0].city)
-  // buildings.forEach((item, i) => {
 }
 
-// $('#entries-text').text(response.buildings)
 const onViewEntriesFailure = function () {
   $('#message').text('Index Failed to Load!')
 }
@@ -114,7 +103,9 @@ const onHideEntriesFailure = function () {
 }
 
 const onRefreshEntriesSuccess = function (response) {
+  // clear current entries
   $('#entries-text').text('')
+  // run onViewEntriesSuccess function to run appending for loop
   onViewEntriesSuccess(response)
   $('#message').text('Entries Refreshed!')
 }

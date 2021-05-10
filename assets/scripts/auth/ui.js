@@ -20,6 +20,7 @@ const onSignUpFailure = function () {
   $('#sign-up').trigger('reset')
 }
 const onSignInSuccess = function (response) {
+  // console.log(response.user)
   store.user = response.user
   $('#message').text(response.user.email + ' signed in successfully')
   $('#sign-in').trigger('reset')
@@ -32,7 +33,6 @@ const onSignInSuccess = function (response) {
   $('#entry-view').show()
   $('#update-entry-click').show()
   $('#delete-entry-click').show()
-  console.log(response.user)
 }
 const onSignInFailure = function () {
   $('#message').text('Sign in failed!')

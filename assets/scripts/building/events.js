@@ -34,7 +34,6 @@ const onDeleteEntry = function (event) {
 }
 const onViewEntries = function (event) {
   event.preventDefault()
-  // $('#entries-text').text('')
   api.viewEntries()
   // handle success or failure
     .then(ui.onViewEntriesSuccess)
@@ -42,7 +41,6 @@ const onViewEntries = function (event) {
 }
 const onRefreshEntries = function () {
   event.preventDefault()
-  // $('#entries-text').text('')
   api.viewEntries()
   // handle success or failure
     .then(ui.onRefreshEntriesSuccess)

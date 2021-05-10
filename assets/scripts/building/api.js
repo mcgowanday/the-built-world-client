@@ -3,7 +3,7 @@ const config = require('./../config')
 const store = require('./../store')
 
 const newEntry = function (data) {
-  console.log(data)
+  // console.log(data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/buildings',
@@ -15,8 +15,8 @@ const newEntry = function (data) {
 }
 
 const updateEntry = function (data) {
-  console.log(data)
-  console.log(data.building.ID)
+  // console.log(data)
+  // console.log(data.building.ID)
   return $.ajax({
     url: config.apiUrl + '/buildings/' + data.building.ID,
     method: 'PATCH',
@@ -27,7 +27,7 @@ const updateEntry = function (data) {
   })
 }
 const deleteEntry = function (data) {
-  console.log(data.building.ID)
+  // console.log(data.building.ID)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/buildings/' + data.building.ID,
