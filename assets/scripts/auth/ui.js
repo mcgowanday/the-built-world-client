@@ -70,6 +70,8 @@ const onSignOutSuccess = function (response) {
   $('#entry-view').hide()
   $('#delete-entry').hide()
   $('#delete-entry-click').hide()
+  $('#hide-entries').hide()
+  $('#refresh-entries').hide()
   $('#entries-text').text('')
 }
 const onSignOutFailure = function () {
