@@ -9,7 +9,7 @@ const onNewEntryClickSuccess = function () {
 }
 
 const onNewEntrySuccess = function (response) {
-  // console.log(response)
+  // console.log(response) to test
   $('#message').text('Entry posted!')
   $('#new-entry').trigger('reset')
   $('#new-entry').hide()
@@ -64,13 +64,13 @@ const onDeleteEntryFailure = function () {
 
 const onViewEntriesSuccess = function (response) {
   const buildings = response.buildings
-  // console.log(response.buildings)
+  // I console.log(response.buildings) to keep on track
   for (let i = 0; i < buildings.length; i++) {
     const name = response.buildings[i].name
     const city = response.buildings[i].city
     const rating = response.buildings[i].rating
     const id = response.buildings[i]._id
-    // console.log(name)
+    // console.log(name) to test
     $('#entries-text').append('</br>' + '<u><strong>' + name + ', ' + city + '</u></strong>' + ' –  Rating:  ' +
      '<strong>' + rating + '</strong>' + '</br>' + '<small>Building ID: ' + id + '</small>' + '</br>')
   }
@@ -79,6 +79,7 @@ const onViewEntriesSuccess = function (response) {
   $('#view-entries').hide()
   $('#hide-entries').show()
   $('#refresh-entries').show()
+  // Logs to test
   // console.log(response)
   // console.log(response.buildings[0].name)
   // console.log(response.buildings[0].city)
