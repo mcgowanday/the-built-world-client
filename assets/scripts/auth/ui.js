@@ -49,17 +49,22 @@ const onChangePasswordClickSuccess = function () {
 const onChangePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
   $('#change-password').trigger('reset')
+  $('#change-password').hide()
+  $('#change-password-click').show()
 }
 const onChangePasswordFailure = function () {
   $('#message').text('Change password failed')
+  $('#change-password').hide()
+  $('#change-password-click').show()
 }
 const onSignOutSuccess = function (response) {
   store.user = null
   $('#message').text('User signed out!')
-  $('#sign-out').hide()
-  $('#change-password-click').hide()
   $('#sign-in').show()
   $('#sign-up').show()
+  $('#sign-out').hide()
+  $('#change-password-click').hide()
+  $('#change-password').hide()
   $('#new-entry').hide()
   $('#update-entry').hide()
   $('#entry-view').hide()
@@ -76,9 +81,9 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
+  onChangePasswordClickSuccess,
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure,
-  onChangePasswordClickSuccess
+  onSignOutFailure
 }
