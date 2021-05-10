@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Built World</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header>
+        <h1>The Built World!</h1>
+        <p id="message"></p>
+        <form id="sign-in">
+              <input name="credentials[email]" type="email" placeholder="Enter email" required>
+              <input name="credentials[password]" type="password" placeholder="Enter password" required>
+              <button class="btn btn-primary btn-sm raised initial-view">Sign In</button>
+            </form>
+        <form id="sign-up">
+              <input name="credentials[email]" type="email" placeholder="Enter email here" required>
+              <input name="credentials[password]" type="password" placeholder="Choose a password" required>
+              <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again" required>
+              <button class="btn btn-primary btn-sm raised initial-view">Sign Up</button>
+            </form>
+        <form id="change-password-click">
+              <button class="btn btn-secondary btn-sm raised">Change Password</button>
+            </form>
+        <form id="change-password">
+              <input name="passwords[old]" type="password" placeholder="Current password">
+              <input name="passwords[new]" type="password" placeholder="New password">
+              <input name="passwords[new]" type="password" placeholder="Confirm new password">
+              <button class="btn btn-secondary btn-sm raised">Confirm Change Password</button>
+            </form>
+        <form id="sign-outt">
+              <button id="sign-out" type="button" class="btn btn-secondary btn-sm raised">Sign Out</button>
+            </form>
+      </header>
+      <hr>
+      <section id="entry-view">
+
+        <form id="new-entry-click">
+              <button class="btn btn-primary btn-sm raised" >New Entry</button>
+            </form>
+        <form id="new-entry">
+              <input name="building[name]" type="text" placeholder="Building name">
+              <input name="building[city]" type="text" placeholder="City">
+              <input name="building[rating]" type="text" placeholder="User rating (0-100)">
+              <button class="btn btn-outline-primary btn-sm">Submit New Entry</button>
+            </form>
+
+        <form id="update-entry-click">
+              <button class="btn btn-primary btn-sm raised">Update Existing Entry</button>
+            </form>
+        <form id="update-entry">
+              <input name="building[name]" type="text" placeholder="Building name">
+              <input name="building[city]" type="text" placeholder="City">
+              <input name="building[rating]" type="text" placeholder="User rating (0-100)">
+              <input name="building[ID]" type="text" placeholder="Building ID">
+              <button class="btn btn-outline-primary btn-sm">Update Entry (must be owned by you)</button>
+            </form>
+
+        <form id="delete-entry-click">
+              <button class="btn btn-primary btn-sm">Delete Existing Entry</button>
+            </form>
+        <form id="delete-entry">
+              <input name="building[ID]" type="text" placeholder="Building ID">
+              <button class="btn btn-outline-primary btn-sm">Delete Entry (must be owned by you)</button>
+            </form>
+
+        <form id="view-entries">
+              <button class="btn btn-primary btn-sm">View Entries</button>
+            </form>
+        <form id="hide-entries">
+              <button class="btn btn-outline-primary btn-sm">Hide Entries</button>
+            </form>
+        <form id="refresh-entries">
+              <button class="btn btn-outline-primary btn-sm">Refresh Entries</button>
+            </form>
+
+          </br>
+
+            <p id="entries-text"></p>
+      </section>
+    </body>
+</html>
